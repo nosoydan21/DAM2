@@ -1,0 +1,38 @@
+# Java / Maven
+target/
+*.class
+*.jar
+*.war
+
+# IDE (IntelliJ)
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Eclipse / NetBeans / VS Code
+.classpath
+.project
+.settings/
+bin/
+build/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Android
+.gradle/
+local.properties
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+
+# Logs / temporales
+*.log

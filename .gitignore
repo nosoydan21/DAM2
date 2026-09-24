@@ -28,7 +28,9 @@ venv/
 
 # Android
 .gradle/
+.kotlin/
 local.properties
+gradle-daemon-jvm.properties
 
 # macOS / Windows
 .DS_Store
@@ -36,3 +38,6 @@ Thumbs.db
 
 # Logs / temporales
 *.log
+
+# El jar del wrapper de Gradle si debe versionarse (necesario para ./gradlew)
+!**/gradle-wrapper.jar

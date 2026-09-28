@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#A5D6A7"
+        android:layout_weight="1"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#C5E1A5"
+        android:layout_weight="1"/>
+
+<!--para cambiarlo de vertical a horizontal, cambias los width y height de posicion-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#E6EE9C"
+        android:layout_weight="1"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFF59D"
+        android:layout_weight="1"/>
+
+
+</LinearLayout>

@@ -1,0 +1,5 @@
+print ("=" * 30)
+print ("Nombre : Eydan Suarez")
+print ("Ciclo: 2º DAM")
+print ("Centro: IES Vicente Medina")
+print("=" * 30)

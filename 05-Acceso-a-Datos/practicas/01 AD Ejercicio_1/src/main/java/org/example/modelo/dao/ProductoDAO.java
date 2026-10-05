@@ -16,5 +16,6 @@ public class ProductoDAO {
 
     public ArrayList<Producto> leerDatos() throws IOException {
         ArrayList<Producto> productos=new ArrayList<Producto>();
+        return productos;
     }
 }

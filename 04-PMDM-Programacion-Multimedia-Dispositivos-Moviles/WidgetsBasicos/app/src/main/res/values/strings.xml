@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">WidgetsBasicos</string>
     <string name="etiqueta1">Mi primera etiqueta</string>
+    <string name="botonRG">BotonRG</string>
+    <string name="RadioButton1">R1</string>
+    <string name="RadioButton2">R2</string>
+    <string name="RadioButton3">R3</string>
+    <string name="RadioButton4">R4</string>
+    <string name="texto_del_boton">botonText</string>
+    <string name="seleccion">"switch "</string>
+    <string name="marcame">"marcame "</string>
 </resources>

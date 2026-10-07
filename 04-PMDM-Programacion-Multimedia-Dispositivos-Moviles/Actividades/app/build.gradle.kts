@@ -3,15 +3,13 @@ plugins {
 }
 
 android {
-    namespace = "com.dam.widgetsbasicos"
+    namespace = "com.dam.actividades"
     compileSdk {
-        version = release(37){
-            minorApiLevel = 1
-        }
+        version = release(37)
     }
 
     defaultConfig {
-        applicationId = "com.dam.widgetsbasicos"
+        applicationId = "com.dam.actividades"
         minSdk = 25
         targetSdk = 37
         versionCode = 1
@@ -38,7 +36,6 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
-    implementation(libs.filament.android)
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)

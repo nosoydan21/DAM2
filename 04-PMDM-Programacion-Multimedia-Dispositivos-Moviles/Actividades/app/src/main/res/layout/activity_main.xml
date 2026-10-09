@@ -9,14 +9,35 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/botonActividad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="143dp"
-        android:layout_marginTop="341dp"
-        android:layout_marginEnd="143dp"
         android:text="Hello World!"
+        app:layout_constraintBottom_toTopOf="@id/botonBrowser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/botonBrowser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="navegador"
+        app:layout_constraintBottom_toTopOf="@+id/botonTelefono"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/botonActividad" />
+
+    <Button
+        android:id="@+id/botonTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="telefono"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/botonBrowser" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

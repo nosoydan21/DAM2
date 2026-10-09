@@ -2,10 +2,12 @@ package com.dam.actividades
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Browser
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -25,6 +27,18 @@ class MainActivity : AppCompatActivity() {
 
     //bindeo
     boton=findViewById(R.id.botonActividad)
+    navegador=findViewById(R.id.botonBrowser)
+
+    //oyente
+    navegador.setOnClickListener
+    {
+        //creamos un intent
+        val browserIntent = Intent(Intent.ACTION_VIEW, "https://www.xataka.com".toUri())
+        if (browserIntent.resolveActivity(packageManager) != null) {
+            //lanzamos actividad
+            startActivity(intent)
+        }
+    }
 
     //oyente
     boton.setOnClickListener

@@ -1,5 +1,7 @@
 package com.mycompany.tarea1.ut2;
 
+import javax.swing.ButtonModel;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -17,6 +19,11 @@ public class NewJFrame2 extends javax.swing.JFrame {
      */
     public NewJFrame2() {
         initComponents();
+        // Esta parte se usa cuando se trabaja con botones.
+        sumar.setActionCommand("Sumar");
+        restar.setActionCommand("Restar");
+        multiplicar.setActionCommand("Multiplicar");
+        dividir.setActionCommand("Dividir");
     }
 
     /**
@@ -28,8 +35,7 @@ public class NewJFrame2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablaOperaciones = new javax.swing.JList<>();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jLabel4 = new javax.swing.JLabel();
         calcular = new javax.swing.JButton();
         solucion = new javax.swing.JTextField();
@@ -39,16 +45,15 @@ public class NewJFrame2 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jSpinner1 = new javax.swing.JSpinner();
         jSpinner2 = new javax.swing.JSpinner();
+        sumar = new javax.swing.JRadioButton();
+        restar = new javax.swing.JRadioButton();
+        multiplicar = new javax.swing.JRadioButton();
+        dividir = new javax.swing.JRadioButton();
+        calAuto = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        tablaOperaciones.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Sumar", "Restar", "Multiplicar", "Dividir" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        tablaOperaciones.addListSelectionListener(this::tablaOperacionesValueChanged);
-        jScrollPane1.setViewportView(tablaOperaciones);
+        setAutoRequestFocus(false);
+        setBackground(new java.awt.Color(34, 37, 45));
 
         jLabel4.setText("Resultado:");
 
@@ -67,9 +72,28 @@ public class NewJFrame2 extends javax.swing.JFrame {
 
         jLabel3.setText("Operador 1:");
 
-        jSpinner1.addChangeListener(this::jSpinner1StateChanged);
+        jSpinner1.addChangeListener(this::spinner);
 
-        jSpinner2.addChangeListener(this::jSpinner2StateChanged);
+        jSpinner2.addChangeListener(this::spinner);
+
+        buttonGroup2.add(sumar);
+        sumar.setText("Sumar");
+        sumar.addActionListener(this::operacion);
+
+        buttonGroup2.add(restar);
+        restar.setText("Restar");
+        restar.addActionListener(this::operacion);
+
+        buttonGroup2.add(multiplicar);
+        multiplicar.setText("Multiplicar");
+        multiplicar.addActionListener(this::operacion);
+
+        buttonGroup2.add(dividir);
+        dividir.setText("Dividir");
+        dividir.addActionListener(this::operacion);
+
+        calAuto.setText("Calcular auto");
+        calAuto.addActionListener(this::calAutoActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,6 +101,15 @@ public class NewJFrame2 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(multiplicar)
+                            .addComponent(restar)
+                            .addComponent(dividir)
+                            .addComponent(sumar)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -89,22 +122,19 @@ public class NewJFrame2 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(calcular))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(55, 55, 55)
                                 .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(solucion, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(36, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(solucion, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(calcular)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(calAuto)))))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,24 +147,26 @@ public class NewJFrame2 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addComponent(sumar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(restar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(multiplicar)
                 .addGap(3, 3, 3)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel4)
-                                    .addComponent(solucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(limpiar)))))
-                .addGap(26, 26, 26)
-                .addComponent(calcular)
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addComponent(dividir)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(calcular)
+                    .addComponent(calAuto)
+                    .addComponent(limpiar))
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(solucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         pack();
@@ -145,7 +177,7 @@ public class NewJFrame2 extends javax.swing.JFrame {
         double operador1 = (Integer) jSpinner1.getValue();
         double operador2 = (Integer) jSpinner2.getValue();
 
-        String operador = tablaOperaciones.getSelectedValue();
+        ButtonModel operador = buttonGroup2.getSelection();
         if(operador == null) {
             solucion.setText("Elige una operación");
             return;
@@ -168,7 +200,7 @@ public class NewJFrame2 extends javax.swing.JFrame {
             break;
         }
          */
-        switch (operador) {
+        switch (operador.getActionCommand()) {
             case "Sumar":
                 sol = operador1 + operador2;
                 break;
@@ -203,25 +235,59 @@ public class NewJFrame2 extends javax.swing.JFrame {
 
     private void limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarActionPerformed
         // TODO add your handling code here:
+        buttonGroup2.clearSelection(); // cuando lo hacemos con botones
         jSpinner1.setValue(0);
         jSpinner2.setValue(0);
         solucion.setText("");
     }//GEN-LAST:event_limpiarActionPerformed
     
     /*===============Calcular de forma automática===============*/
-    private void jSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner1StateChanged
-        // TODO add your handling code here:
-        calcularActionPerformed(null);
-    }//GEN-LAST:event_jSpinner1StateChanged
+    
+    /* === PARTE DE LA OPTIMIZACION, QUITAMOS LOS METODOS DE LAS OPERACIONES ===
+    private void jSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {
+        calcularAuto();
+    }
 
-    private void jSpinner2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner2StateChanged
-        // TODO add your handling code here:
-        calcularActionPerformed(null);
-    }//GEN-LAST:event_jSpinner2StateChanged
+    private void jSpinner2StateChanged(javax.swing.event.ChangeEvent evt) {
+        calcularAuto();
+    }
 
-    private void tablaOperacionesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_tablaOperacionesValueChanged
-       calcularActionPerformed(null);
-    }//GEN-LAST:event_tablaOperacionesValueChanged
+    private void sumarActionPerformed(java.awt.event.ActionEvent evt) {
+        calcularAuto();
+    }
+
+    private void restarActionPerformed(java.awt.event.ActionEvent evt) {
+        calcularAuto();
+    }
+
+    private void multiplicarActionPerformed(java.awt.event.ActionEvent evt) {
+        calcularAuto();
+    }
+
+    private void dividirActionPerformed(java.awt.event.ActionEvent evt) {
+        calcularAuto();
+    }
+    */
+    private void calAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calAutoActionPerformed
+        // TODO add your handling code here:
+        calcularAuto();
+    }//GEN-LAST:event_calAutoActionPerformed
+
+    /*=== OPTIMIZACION DE CODIGO PARA USAR LAS 4 OPERACIONES EN SOLO UN MÉTODO ===*/
+    private void operacion(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_operacion
+        // TODO add your handling code here:
+        calcularAuto();
+    }//GEN-LAST:event_operacion
+
+    private void spinner(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spinner
+        // TODO add your handling code here:
+        calcularAuto();
+    }//GEN-LAST:event_spinner
+    
+    private void calcularAuto(){
+        if(calAuto.isSelected()) calcularActionPerformed(null);
+    }
+    
     /*==================================================================================*/
     
     /**
@@ -250,16 +316,20 @@ public class NewJFrame2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JCheckBox calAuto;
     private javax.swing.JButton calcular;
+    private javax.swing.JRadioButton dividir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JButton limpiar;
+    private javax.swing.JRadioButton multiplicar;
+    private javax.swing.JRadioButton restar;
     private javax.swing.JTextField solucion;
-    private javax.swing.JList<String> tablaOperaciones;
+    private javax.swing.JRadioButton sumar;
     // End of variables declaration//GEN-END:variables
 }

@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity : AppCompatActivity() {
 
     private lateinit var spinner: Spinner
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //bindeamos
-        spinner=findViewById(R.id.spinner)
+        spinner = findViewById(R.id.spinner)
 
 /*
         //creamos el array de datos
@@ -39,32 +39,20 @@ class MainActivity : AppCompatActivity() {
         spinner.adapter=adaptador
 */
 
-        val adaptador = ArrayAdapter.createFromResource(this,R.array.valores_array,android.R.layout.simple_spinner_item)
+        val adaptador = ArrayAdapter.createFromResource(this, R.array.valores_array, android.R.layout.simple_spinner_item)
         adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner.adapter=adaptador
+        spinner.adapter = adaptador
 
-        spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
-
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 val pos = parent.getItemAtPosition(position)
-
-
                 Toast.makeText(this@MainActivity, "se ha seleccionado $pos", Toast.LENGTH_SHORT).show()
             }
 
-            override fun onItemSelected(
-                p0: AdapterView<*>?,
-                p1: View?,
-                p2: Int,
-                p3: Long
-            ) {
-                TODO("Not yet implemented")
-            }
-
-
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-                TODO("Not yet implemented")
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // No hay nada seleccionado: no hacemos nada.
+                
             }
         }
 

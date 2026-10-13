@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     private lateinit var boton: Button;
+    private lateinit var navegador: Button;
     private lateinit var startForResult: ActivityResultLauncher<Intent>;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,29 +24,27 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-    }
 
-    //bindeo
-    boton=findViewById(R.id.botonActividad)
-    navegador=findViewById(R.id.botonBrowser)
+        //bindeo
+        boton = findViewById(R.id.botonActividad)
+        navegador = findViewById(R.id.botonBrowser)
 
-    //oyente
-    navegador.setOnClickListener
-    {
-        //creamos un intent
-        val browserIntent = Intent(Intent.ACTION_VIEW, "https://www.xataka.com".toUri())
-        if (browserIntent.resolveActivity(packageManager) != null) {
+        //oyente
+        navegador.setOnClickListener {
+            //creamos un intent
+            val browserIntent = Intent(Intent.ACTION_VIEW, "https://www.xataka.com".toUri())
+            if (browserIntent.resolveActivity(packageManager) != null) {
+                //lanzamos actividad
+                startActivity(browserIntent)
+            }
+        }
+
+        //oyente
+        boton.setOnClickListener {
+            //creamos un intent
+            val intent = Intent(this, SegundaActividad::class.java)
             //lanzamos actividad
             startActivity(intent)
         }
-    }
-
-    //oyente
-    boton.setOnClickListener
-    {
-        //creamos un intent
-        val intent = Intent(this, SegundaActividad::class.java)
-        //lanzamos actividad
-        startActivity(intent)
     }
 }

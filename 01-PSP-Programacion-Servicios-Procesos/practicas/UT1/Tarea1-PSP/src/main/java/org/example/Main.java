@@ -16,6 +16,7 @@ public class Main {
             System.out.println("Elija una opción:");
             if (input.hasNextInt()) {
                 opcion = input.nextInt();
+                input.nextLine(); // consume el salto de linea pendiente tras nextInt()
                 System.out.println("-----------------------------");
 
                 switch (opcion) {
@@ -82,7 +83,12 @@ public class Main {
 
         for (int i = 0; i < procesos.size(); i++) {
             String proceso = procesos.get(i);
-            if(proceso.startsWith())
+            if (proceso.startsWith(codigo + " |")) {
+                procesos.set(i, codigo + " | Estado: TERMINADO");
+                System.out.println("Proceso terminado: " + codigo);
+                return;
+            }
         }
+        System.out.println("No se encontro ningun proceso con el codigo: " + codigo);
     }
 }

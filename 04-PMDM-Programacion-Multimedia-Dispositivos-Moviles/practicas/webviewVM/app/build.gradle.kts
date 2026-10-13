@@ -32,7 +32,7 @@ android {
 }
 
 dependencies {
-    implementation("androidx.webkit:webkit:1.17.0")
+    implementation(libs.androidx.webkit)
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)

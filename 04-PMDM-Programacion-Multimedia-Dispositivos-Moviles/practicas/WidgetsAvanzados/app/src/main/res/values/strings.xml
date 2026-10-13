@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">WidgetsAvanzados</string>
+    <string name="spinner">Esto es un spinner</string>
+</resources>

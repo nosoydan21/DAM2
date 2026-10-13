@@ -12,7 +12,8 @@ para que **todo compile y se ejecute igual en los dos sitios**.
 
 | Herramienta | Versión recomendada | Notas |
 |---|---|---|
-| **JDK** | **OpenJDK 25 (LTS)** — Temurin o Zulu | Versión usada en todos los `pom.xml`. Instalado en `C:\Users\<usuario>\.jdks`. |
+| **JDK** | **Eclipse Temurin 25 (LTS)** | Versión usada en todos los `pom.xml`. Instalado en `C:\Users\<usuario>\.jdks`. |
+| **Maven** | **3.9.16** | Para compilar los módulos Java desde terminal. Instalado en `C:\Users\<usuario>\tools`. |
 | **IntelliJ IDEA** | Ultimate 2026.2 o superior | Proyecto principal (Maven + Gradle). |
 | **Android Studio** | Rabbit (2026.2) o superior | Solo para la asignatura **PMDM** (proyectos Gradle). |
 | **Git** | 2.45+ | Para sincronizar. |
@@ -24,12 +25,14 @@ para que **todo compile y se ejecute igual en los dos sitios**.
 ### Variables de entorno (Windows)
 
 ```
-JAVA_HOME = C:\Users\<usuario>\.jdks\<jdk-25>      (p. ej. zulu-25 o temurin-25)
-Path      = %JAVA_HOME%\bin; ...
+JAVA_HOME = C:\Users\<usuario>\.jdks\temurin-25
+Path      = %JAVA_HOME%\bin; C:\Users\<usuario>\tools\apache-maven-3.9.16\bin; ...
 ```
 
-> En esta máquina está instalado **Azul Zulu 25.0.4.1 (LTS)** en `C:\Users\<usuario>\.jdks\zulu-25`.
+> En esta máquina están instalados **Eclipse Temurin 25.0.4.1 (LTS)** en `C:\Users\<usuario>\.jdks\temurin-25`
+> (por defecto) y **Azul Zulu 25.0.4.1 (LTS)** en `C:\Users\<usuario>\.jdks\zulu-25` (alternativa).
 > Cualquier JDK **25 LTS** (Temurin, Zulu, Oracle...) sirve, siempre que sea la **25**.
+> **Maven 3.9.16** está en `C:\Users\<usuario>\tools\apache-maven-3.9.16` (`MAVEN_HOME`).
 
 Comprobar:
 

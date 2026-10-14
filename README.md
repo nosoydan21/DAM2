@@ -12,32 +12,31 @@ para que **todo compile y se ejecute igual en los dos sitios**.
 
 | Herramienta | Versión recomendada | Notas |
 |---|---|---|
-| **JDK** | **Eclipse Temurin 25 (LTS)** | Versión usada en todos los `pom.xml`. Instalado en `C:\Users\<usuario>\.jdks`. |
+| **JDK** | **Eclipse Temurin 21 (LTS)** | Versión usada en todos los `pom.xml`. Instalado en `C:\Users\<usuario>\.jdks`. |
 | **Maven** | **3.9.16** | Para compilar los módulos Java desde terminal. Instalado en `C:\Users\<usuario>\tools`. |
 | **IntelliJ IDEA** | Ultimate 2026.2 o superior | Proyecto principal (Maven + Gradle). |
 | **Android Studio** | Rabbit (2026.2) o superior | Solo para la asignatura **PMDM** (proyectos Gradle). |
 | **Git** | 2.45+ | Para sincronizar. |
 | **Android SDK** | Platform 37 / Build-Tools 36.0.0 | Se instala con Android Studio. |
 
-> El proyecto está pensado para **JDK 25 (LTS)**. No uses JDK 26/27 (no LTS): los módulos de la carpeta
+> El proyecto está pensado para **JDK 21 (LTS)**. No uses versiones no LTS (26/27): los módulos de la carpeta
 > `03-DI-Desarrollo-Interfaces` y `05-Acceso-a-Datos` fallaban porque pedían Java 26, que no está instalado.
 
 ### Variables de entorno (Windows)
 
 ```
-JAVA_HOME = C:\Users\<usuario>\.jdks\temurin-25
+JAVA_HOME = C:\Users\<usuario>\.jdks\temurin-21
 Path      = %JAVA_HOME%\bin; C:\Users\<usuario>\tools\apache-maven-3.9.16\bin; ...
 ```
 
-> En esta máquina están instalados **Eclipse Temurin 25.0.4.1 (LTS)** en `C:\Users\<usuario>\.jdks\temurin-25`
-> (por defecto) y **Azul Zulu 25.0.4.1 (LTS)** en `C:\Users\<usuario>\.jdks\zulu-25` (alternativa).
-> Cualquier JDK **25 LTS** (Temurin, Zulu, Oracle...) sirve, siempre que sea la **25**.
+> En esta máquina está instalado **Eclipse Temurin 21.0.12.1 (LTS)** en `C:\Users\<usuario>\.jdks\temurin-21`.
+> Cualquier JDK **21 LTS** (Temurin, Zulu, Oracle...) sirve, siempre que sea la **21**.
 > **Maven 3.9.16** está en `C:\Users\<usuario>\tools\apache-maven-3.9.16` (`MAVEN_HOME`).
 
 Comprobar:
 
 ```bat
-java -version     :: debe mostrar 25.x
+java -version     :: debe mostrar 21.x
 mvn -version
 ```
 
@@ -101,11 +100,13 @@ Proyectos Maven:
 - `01-PSP-.../practicas/UT1/Diagnostico de red`
 - `01-PSP-.../practicas/UT1/Ejercicio_Pipeline`
 - `01-PSP-.../practicas/UT1/ProgramacionMultiprocesos`
+- `01-PSP-.../practicas/UT1/Procesamiento_de_datos_en_tuberia`
+- `03-DI-.../practicas/EjemplosJOptionPanel`
 - `03-DI-.../practicas/PrimeraInterfaz`
 - `03-DI-.../practicas/Tarea1_UT2`
 - `05-Acceso-a-Datos/practicas/01 AD Ejercicio_1`
 
-Todos usan `<maven.compiler.release>25</maven.compiler.release>`.
+Todos usan `<maven.compiler.release>21</maven.compiler.release>`.
 
 ---
 
@@ -136,7 +137,7 @@ Prácticas de Python (`practicas/UT1/main.py`). Se pueden ejecutar con cualquier
 
 | Síntoma | Solución |
 |---|---|
-| `release version 26 not supported` | Estás usando un JDK distinto de 25. Configura JDK 25 en `File > Project Structure > SDK`. |
+| `release version 26 not supported` | Estás usando un JDK distinto de 21. Configura JDK 21 en `File > Project Structure > SDK`. |
 | `sdk.dir` / `local.properties` | Abre el proyecto Android con Android Studio una vez; lo genera automáticamente. |
 | `Please tell me who you are` (git) | Ejecuta `sincronizar.bat` una vez, o configura `git config --global user.email ...`. |
 | Android no encuentra el SDK | Comprueba `sdk.dir` en `local.properties`. |

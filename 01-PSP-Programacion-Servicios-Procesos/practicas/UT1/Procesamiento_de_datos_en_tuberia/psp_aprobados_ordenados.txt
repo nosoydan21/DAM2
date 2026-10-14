@@ -1,0 +1,5 @@
+Beatriz Alonso,PSP,9.2
+Elena Navarro,PSP,5.0
+Gonzalo Ramírez,PSP,8.1
+Juan Pérez,PSP,7.5
+Lucía Fernández,PSP,6.0

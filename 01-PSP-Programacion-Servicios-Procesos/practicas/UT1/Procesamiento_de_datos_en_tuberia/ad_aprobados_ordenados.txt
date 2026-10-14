@@ -1,0 +1,3 @@
+Ana López,AD,9.5
+María Gómez,AD,8.0
+Sofia Domínguez,AD,5.5

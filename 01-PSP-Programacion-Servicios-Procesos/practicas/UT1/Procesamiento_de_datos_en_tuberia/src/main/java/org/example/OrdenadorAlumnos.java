@@ -6,19 +6,10 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
-import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Locale;
 
-/**
- * Proceso 3 de la tubería.
- *
- * Lee los registros ya filtrados desde la entrada estándar (System.in), los
- * almacena en memoria, los ordena alfabéticamente por el nombre del alumno
- * y los escribe en la salida estándar (System.out).
- */
 public class OrdenadorAlumnos {
 
     public static void main(String[] args) {
@@ -39,16 +30,13 @@ public class OrdenadorAlumnos {
             System.exit(2);
         }
 
-        // Collator en español: ordena correctamente teniendo en cuenta acentos.
-        Collator collator = Collator.getInstance(Locale.forLanguageTag("es-ES"));
-        registros.sort(Comparator.comparing(OrdenadorAlumnos::nombre, collator));
+        registros.sort(Comparator.comparing(OrdenadorAlumnos::nombre));
 
         for (String registro : registros) {
             salida.println(registro);
         }
     }
 
-    /** Extrae el nombre del alumno (primer campo de "Nombre,Asignatura,Nota"). */
     private static String nombre(String registro) {
         int coma = registro.indexOf(',');
         return coma >= 0 ? registro.substring(0, coma).trim() : registro.trim();

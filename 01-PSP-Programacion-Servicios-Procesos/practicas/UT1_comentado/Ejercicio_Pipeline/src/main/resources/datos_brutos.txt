@@ -1,0 +1,7 @@
+ID: 104 | Usuario: mgarcia | Fecha: 15/03/2023 | Estado: OK
+ID: 105 | Usuario: aperez | Fecha: 02/01/2024 | Estado: ERROR
+ID: 101 | Usuario: jlopez | Fecha: 12/05/2024 | Estado: OK
+ID: 103 | Usuario: cgonzalez | Fecha: 20/11/2022 | Estado: OK
+ID: 102 | Usuario: bsanchez | Fecha: 08/08/2024 | Estado: ERROR
+ID: 106 | Usuario: rromero | Fecha: 30/09/2024 | Estado: OK
+ID: 100 | Usuario: aalvarez | Fecha: 01/01/2021 | Estado: OK

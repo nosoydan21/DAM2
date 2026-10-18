@@ -1,0 +1,12 @@
+Juan Pérez,PSP,7.5
+María Gómez,AD,8.0
+Carlos Ruíz,PSP,4.2
+Ana López,AD,9.5
+Lucía Fernández,PSP,6.0
+Pedro Martín,AD,3.5
+Elena Navarro,PSP,5.0
+David Sánchez,SGE,6.5
+Beatriz Alonso,PSP,9.2
+Javier Torres,PSP,4.9
+Sofia Domínguez,AD,5.5
+Gonzalo Ramírez,PSP,8.1

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Practica01</string>
+    <string name="intro_num1">Introduzca un número:</string>
+    <string name="intro_num2">Introduzca otro número:</string>
+    <string name="btn_sum">+</string>
+    <string name="btn_res">-</string>
+    <string name="btn_mul">x</string>
+    <string name="btn_div">÷</string>
+    <string name="result">Resultado</string>
+    <string name="resultado_valor">Resultado: %1$.2f</string>
+    <string name="err_num">Introduce dos números válidos</string>
+    <string name="error_div_cero">No se puede dividir entre 0</string>
+</resources>

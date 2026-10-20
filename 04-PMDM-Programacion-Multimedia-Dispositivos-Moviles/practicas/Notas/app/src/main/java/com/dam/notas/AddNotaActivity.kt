@@ -44,5 +44,23 @@ class AddNotaActivity: AppCompatActivity() {
                 Toast.makeText(this, "Los campos no pueden estar vacíos", Toast.LENGTH_SHORT).show()
             }
         }
+
+        buttonAdd=findViewById(R.id.buttonAddNota)
+
+
+        buttonAdd.setOnClickListener {
+
+
+            if (etTitulo.text.isNotEmpty() && etDesc.text.isNotEmpty()) {
+                val resultIntent = Intent()
+                resultIntent.putExtra("titulo", etTitulo.text.toString())
+                resultIntent.putExtra("descripcion", etDesc.text.toString())
+                setResult(RESULT_OK, resultIntent)
+                finish()
+            }else{
+                Toast.makeText(this, "texto vacío", Toast.LENGTH_SHORT).show()
+            }
+        }
+
     }
 }

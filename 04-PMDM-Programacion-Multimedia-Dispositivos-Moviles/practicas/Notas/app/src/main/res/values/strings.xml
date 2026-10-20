@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Notas</string>
+    <string name="action_buscar">buscar</string>
+    <string name="archivo">archivo</string>
+    <string name="action_opciones">opciones</string>
+    <string name="action_salir">salir</string>
 </resources>

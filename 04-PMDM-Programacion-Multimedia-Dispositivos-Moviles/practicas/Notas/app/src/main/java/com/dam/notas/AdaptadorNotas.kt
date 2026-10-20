@@ -28,4 +28,10 @@ class AdaptadorNotas(): RecyclerView.Adapter<ViewHolderNota>() {
     override fun getItemCount(): Int {
         return this.notas.size
     }
+
+    fun addNota(nota: Nota){
+        notas.add(nota)
+        notifyDataSetChanged();
+    }
+
 }

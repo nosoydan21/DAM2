@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author alumno
  */
 public class NewJFrame extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(NewJFrame.class.getName());
 
     /**
@@ -35,7 +35,13 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
         confirmLabel = new javax.swing.JLabel();
+        confirmLabel2 = new javax.swing.JLabel();
+        confirmLabel3 = new javax.swing.JLabel();
+        confirmLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,43 +57,77 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton4.setText("Mensaje sin icono");
         jButton4.addActionListener(this::jButton4ActionPerformed);
 
-        jButton5.setText("jButton5");
+        jButton5.setText("Mensaje de confirmación");
         jButton5.addActionListener(this::jButton5ActionPerformed);
 
-        confirmLabel.setText("----------");
+        jButton6.setText("Mensaje de entrada de texto");
+        jButton6.addActionListener(this::jButton6ActionPerformed);
+
+        jButton7.setText("Mensaje de entrada por combo box");
+        jButton7.addActionListener(this::jButton7ActionPerformed);
+
+        jButton8.setText("Mensaje de entrada por botones de opciones");
+        jButton8.addActionListener(this::jButton8ActionPerformed);
+
+        confirmLabel.setText("-");
+
+        confirmLabel2.setText("-");
+
+        confirmLabel3.setText("-");
+
+        confirmLabel4.setText("-");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(confirmLabel)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(confirmLabel)
+                    .addComponent(confirmLabel2)
+                    .addComponent(confirmLabel3)
+                    .addComponent(confirmLabel4))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addGap(18, 18, 18)
+                .addGap(25, 25, 25)
                 .addComponent(jButton4)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(confirmLabel)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(confirmLabel))
-                .addContainerGap(83, Short.MAX_VALUE))
+                    .addComponent(jButton6)
+                    .addComponent(confirmLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(confirmLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton8)
+                    .addComponent(confirmLabel4))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
@@ -116,8 +156,42 @@ public class NewJFrame extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         int respuesta = JOptionPane.showConfirmDialog(this, "¿Quieres merca?", "Título de la pregunta", JOptionPane.YES_NO_OPTION);
-        confirmLabel.setText(String.valueOf(respuesta));
+        confirmLabel.setText(respuesta == JOptionPane.YES_OPTION ? "Respuesta: Si" : "Respuesta: No");
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        String text = JOptionPane.showInputDialog(this, "¿Cómo te llamas?", "Entrada de texto", JOptionPane.QUESTION_MESSAGE);
+        if (text == null) {
+            confirmLabel2.setText("Cancelado");
+        } else {
+            confirmLabel2.setText("Texto introducido: " + text);
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        String[] colores = {"Rojo", "Verde", "Azul"};
+        Object eleccion = JOptionPane.showInputDialog(this, "Elige un color", "Entrada con comboBox",
+                JOptionPane.QUESTION_MESSAGE, null, colores, colores[0]);
+        if (eleccion == null) {
+            confirmLabel3.setText("Cancelado");
+        } else {
+            confirmLabel3.setText("Color: " + eleccion);
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        String[] opciones = {"Pequeño", "Mediano", "Grande"};
+        int r = JOptionPane.showOptionDialog(this, "Elige un tamaño", "Entrada con botones",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[1]);
+        if (r == -1) {
+            confirmLabel4.setText("Cancelado");
+        } else {
+            confirmLabel4.setText("Tamaño: " + opciones[r]);
+        }
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,10 +220,16 @@ public class NewJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel confirmLabel;
+    private javax.swing.JLabel confirmLabel2;
+    private javax.swing.JLabel confirmLabel3;
+    private javax.swing.JLabel confirmLabel4;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     // End of variables declaration//GEN-END:variables
 }

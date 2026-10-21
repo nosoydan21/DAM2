@@ -21,7 +21,18 @@ class AdaptadorNotas(): RecyclerView.Adapter<ViewHolderNota>() {
         val nota: Nota=this.notas[position]
         holder.textViewTitulo.text=nota.titulo
         holder.textViewDescripcion.text=nota.descripcion
-
+        holder.menuNota.setOnMenuItemClickListener{
+            when(it.itemId){
+                R.id.action_borrar -> {
+                    //realizo la acción
+                    notas.remove(nota)
+                    notifyDataSetChanged()
+                    true
+                } else -> {
+                    true
+                }
+            }
+        }
 
     }
 

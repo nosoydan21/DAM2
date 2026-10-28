@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">SPejemplos</string>
+    <string name="title_ajustes">Mis Ajustes Personales</string>
+    <string name="lbl_nombre">Nombre de usuario (String):</string>
+    <string name="hint_nombre">Escribe tu nombre</string>
+    <string name="lbl_edad">Edad (Int):</string>
+    <string name="hint_edad">Escribe tu edad</string>
+    <string name="lbl_estatura">Estatura en metros (Float):</string>
+    <string name="hint_estatura">Ej: 1.75</string>
+    <string name="label_notificaciones">Recibir Notificaciones (Boolean)</string>
+    <string name="label_perfil_publico">Perfil Público (Boolean)</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="btn_cargar">Cargar</string>
+    <string name="btn_limpiar">Borrar</string>
+    <string name="msg_guardado">Ajustes guardados correctamente</string>
+    <string name="msg_cargado">Ajustes cargados de SharedPreferences</string>
+    <string name="msg_borrado">Ajustes borrados de SharedPreferences</string>
+    <string name="lbl_resumen">Resumen de Preferencias:</string>
+    <string name="no_datos">No hay datos cargados.</string>
+</resources>
+
+

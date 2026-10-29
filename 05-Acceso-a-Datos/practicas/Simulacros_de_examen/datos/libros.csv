@@ -1,0 +1,6 @@
+idLibro;titulo;autor;precio;disponible
+1;El Quijote;Cervantes;12.50;true
+2;La Celestina;Rojas;9.90;false
+3;Rimas;Becquer;7.00;true
+4;Fortunata y Jacinta;Galdos;15.25;false
+5;La Regenta;Clarin;14.00;true

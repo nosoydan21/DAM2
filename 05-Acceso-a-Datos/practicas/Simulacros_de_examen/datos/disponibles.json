@@ -1,0 +1,16 @@
+[
+  {
+    "idLibro": 1,
+    "titulo": "El Quijote",
+    "autor": "Cervantes",
+    "precio": 12.5,
+    "disponible": true
+  },
+  {
+    "idLibro": 3,
+    "titulo": "Rimas",
+    "autor": "Becquer",
+    "precio": 7.0,
+    "disponible": true
+  }
+]

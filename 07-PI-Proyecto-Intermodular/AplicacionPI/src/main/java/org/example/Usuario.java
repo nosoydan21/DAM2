@@ -11,6 +11,11 @@ public class Usuario {
         this.password = password;
     }
 
+    public Usuario(String nickname, String password) {
+        this.nickname = nickname;
+        this.password = password;
+    }
+
     public int getIdUsuario() {
         return idUsuario;
     }

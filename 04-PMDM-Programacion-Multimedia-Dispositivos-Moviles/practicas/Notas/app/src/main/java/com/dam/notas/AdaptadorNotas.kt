@@ -7,6 +7,16 @@ import androidx.recyclerview.widget.RecyclerView
 
 class AdaptadorNotas(): RecyclerView.Adapter<ViewHolderNota>() {
     private var notas: MutableList<Nota> = mutableListOf()
+    private lateinit var listener: AdaptadorCallBack
+
+    interface AdaptadorCallBack {
+        fun onDeleteNotas(nota: Nota)
+    }
+
+    fun setAdaptadorCallBack(listener: AdaptadorCallBack){
+        this.listener=listener
+    }
+    
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -33,7 +43,6 @@ class AdaptadorNotas(): RecyclerView.Adapter<ViewHolderNota>() {
                 }
             }
         }
-
     }
 
     override fun getItemCount(): Int {

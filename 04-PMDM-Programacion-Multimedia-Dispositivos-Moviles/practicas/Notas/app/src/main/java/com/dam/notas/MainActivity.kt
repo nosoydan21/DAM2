@@ -14,8 +14,12 @@ import androidx.activity.result.registerForActivityResult
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
     
@@ -117,6 +121,28 @@ class MainActivity : AppCompatActivity() {
             startAddNotaForResult.launch(intent)  // Lanzar la ac
         }
 
+        startAddNotaForResult = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val data = result.data
+                if (data != null) {
+                    val tituloNota = data.extras?.getString("titulo")?:""
+                    val descnota = data.extras?.getString("descripcion")?:""
+//                    adaptadorRecyclerViewnotas.addNota(Nota(tituloNota, descnota))
 
+
+                    lifecycleScope.launch { Dispatchers.IO
+                        // insercion de la nota
+                        val database = NotaBBDD.getInstance(applicationContext)
+                        var nuevaNota = database.notaDAO().insert(Nota(tituloNota, descnota))
+                        var notas = database.notaDAO().selectAll()
+                        withContext(Dispatchers.Main) {
+                            adaptadorRecyclerViewnotas.setNotas(notas)
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,4 @@
+# Copia este archivo como db.properties y ajusta los valores
+db.url=jdbc:mariadb://localhost:3306/reservas_equipo
+db.user=root
+db.password=

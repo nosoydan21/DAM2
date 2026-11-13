@@ -1,6 +1,6 @@
 package org.example.servicio;
 
-import org.example.DAO.ProductoDAO;
+import org.example.dao.ProductoDAO;
 import org.example.modelo.Producto;
 
 
@@ -39,25 +39,11 @@ public class Inventario {
         }
     }
 
-    public void guardarDatos() throws IOException {
-        fuenteDatos.escribirDatos(listaProductos);
-    }
-
     public boolean venderProducto(int idProducto,int cantidad){
-        for(Producto p:listaProductos){
-            if (p.getId()==idProducto){
-                return p.vender(cantidad);
-            }
-        }
-        return false;
+       return fuenteDatos.venderProducto(idProducto, cantidad);
     }
 
     public void reponerProducto(int idProducto, int cantidad){
-        for (Producto p:listaProductos){
-            if (p.getId()==idProducto){
-                p.reponer(cantidad);
-            }
-        }
+        return fuenteDatos.reponerProducto(int idProducto, int cantidad);
     }
 }
-
